@@ -15,19 +15,19 @@ default_config: &default_config
   environment:
     BASH_ENV: /root/.bashrc
 
-repo_cache_key: &repo_cache_key
-  v1-repo-{{ .Branch }}-{{ .Revision }}
+# repo_cache_key: &repo_cache_key
+#   v1-repo-{{ .Branch }}-{{ .Revision }}
 
 # Step to restore repository from cache
-restore_repo: &restore_repo
-  restore_cache:
-    key: *repo_cache_key
+# restore_repo: &restore_repo
+#   restore_cache:
+#     key: *repo_cache_key
 
-save_repo: &save_repo
-  save_cache:
-    key: *repo_cache_key
-    paths:
-      - *working_directory
+# save_repo: &save_repo
+#   save_cache:
+#     key: *repo_cache_key
+#     paths:
+#       - *working_directory
 
 set_terraform_environment: &set_terraform_environment
   run:
